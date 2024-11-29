@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "web3": "^4.15.0"
+  },
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  },
+  "name": "dapp",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "lite-server"
+  },
+  "lite-server": {
+    "server": {
+      "baseDir": ""
+    }
+  }
+}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electricity Bill Calculator DApp</title>
+    <style>
+      body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(-45deg, #4a90e2, #90caf9, #82addb, #b39ddb);
+            background-size: 400% 400%;
+            animation: gradientBG 8s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header {
+            background-color: #3f02b9;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            border-radius: 8px 8px 0 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background: white;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .left-panel, .right-panel {
+            padding: 20px;
+            flex: 1 1 50%;
+            box-sizing: border-box;
+        }
+
+        .left-panel {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f4f8;
+        }
+
+        .left-panel img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .left-panel h2 {
+            margin-top: 10px;
+            color: #3f02b9;
+            font-size: 1.4rem;
+        }
+
+        .right-panel {
+            background-color: #fafafa;
+        }
+
+        .right-panel h2 {
+            margin-bottom: 20px;
+            color: #3f02b9;
+            font-size: 1.6rem;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        button {
+            width: 100%;
+            background-color: #3f02b9;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #290185;
+        }
+
+        h3 {
+            margin-top: 20px;
+            color: #3f02b9;
+            text-align: center;
+        }
+
+        #billDetails {
+            font-size: 1.2rem;
+            color: #444;
+            text-align: center;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+
+            .left-panel, .right-panel {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>ANDHRA PRADESH ELECTRICITY BILL GENERATOR - APSPDCL</header>
+        <div class="content">
+            <!-- Left Panel with Image -->
+            <div class="left-panel">
+                <img src="logo2.png" alt="Electricity Image">
+                <h2>APSPDCL</h2>
+            </div>
+            <!-- Right Panel with Calculator -->
+            <div class="right-panel">
+                <h2>Electricity Bill Calculator</h2>
+                <label for="prevReading">Previous Meter Reading:</label>
+                <input type="number" id="prevReading" placeholder="Enter previous reading">
+
+                <label for="currReading">Current Meter Reading:</label>
+                <input type="number" id="currReading" placeholder="Enter current reading">
+
+                <button onclick="generateBill()">Generate Bill</button>
+                <h3>2200030815</h3>
+                <h3>Bill Details:</h3>
+                <div id="billDetails"></div>
+                <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+                <script src="app.js"></script>
+            </div>
+        </div>
+    </div>
+    </body>
